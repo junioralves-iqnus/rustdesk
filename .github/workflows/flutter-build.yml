@@ -1,7 +1,13 @@
 name: Build the flutter version of the RustDesk
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      upload-artifact:
+        description: 'Upload build artifacts'
+        required: false
+        default: true
+        type: boolean
   workflow_call:
     inputs:
       upload-artifact:
@@ -521,7 +527,7 @@ jobs:
           BASE_URL=${{ env.SIGN_BASE_URL }} SECRET_KEY=${{ secrets.SIGN_SECRET_KEY }} python3 res/job.py sign_files ./SignOutput
 
       - name: Upload signed Windows Flutter EXE
-        if: env.UPLOAD_ARTIFACT == 'true' && env.PUBLISH_UPDATE_METADATA == 'true' && env.SIGN_BASE_URL != '-2'
+        if: env.UPLOAD_ARTIFACT == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: windows-flutter-${{ matrix.job.arch }}-exe
@@ -1104,7 +1110,7 @@ jobs:
           test -f "rustdesk-${VERSION}-${ARCH}.dmg"
 
       - name: Upload signed macOS DMG
-        if: env.UPLOAD_ARTIFACT == 'true' && env.PUBLISH_UPDATE_METADATA == 'true' && env.MACOS_P12_BASE64 != null
+        if: env.UPLOAD_ARTIFACT == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: macos-${{ matrix.job.arch }}-dmg
