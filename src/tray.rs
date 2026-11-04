@@ -304,7 +304,7 @@ fn load_icon_from_asset() -> Option<image::DynamicImage> {
         return None;
     };
     #[cfg(target_os = "macos")]
-    let path = path.join("../Frameworks/App.framework/Resources/flutter_assets/assets/icon.png");
+    let path = path.join("../Frameworks/App.framework/Resources/flutter_assets/assets/mac-tray.png");
     #[cfg(windows)]
     let path = path.join(r"data\flutter_assets\assets\icon.png");
     #[cfg(target_os = "linux")]
