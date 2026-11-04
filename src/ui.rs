@@ -84,7 +84,7 @@ pub fn start(args: &mut [String]) {
     let mut frame = sciter::WindowBuilder::main_window().create();
     #[cfg(windows)]
     allow_err!(sciter::set_options(sciter::RuntimeOptions::UxTheming(true)));
-    frame.set_title(&crate::get_app_name());
+    frame.set_title(&crate::get_app_display_name());
     #[cfg(target_os = "macos")]
     crate::platform::delegate::make_menubar(frame.get_host(), args.is_empty());
     #[cfg(windows)]
@@ -538,6 +538,10 @@ impl UI {
         get_app_name()
     }
 
+    fn get_app_display_name(&self) -> String {
+        crate::get_app_display_name()
+    }
+
     fn get_software_ext(&self) -> String {
         #[cfg(windows)]
         let p = "exe";
@@ -795,6 +799,7 @@ impl sciter::EventHandler for UI {
         fn show_run_without_install();
         fn run_without_install();
         fn get_app_name();
+        fn get_app_display_name();
         fn get_software_store_path();
         fn get_software_ext();
         fn open_url(String);

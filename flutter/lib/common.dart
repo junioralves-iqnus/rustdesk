@@ -3020,8 +3020,10 @@ int versionCmp(String v1, String v2) {
   return bind.versionToNumber(v: v1) - bind.versionToNumber(v: v2);
 }
 
+const String appDisplayName = 'Suporte Iqnus';
+
 String getWindowName({WindowType? overrideType}) {
-  final name = bind.mainGetAppNameSync();
+  final name = appDisplayName;
   switch (overrideType ?? kWindowType) {
     case WindowType.Main:
       return name;

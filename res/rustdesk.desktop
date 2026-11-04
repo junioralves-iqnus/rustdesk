@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=RustDesk
-GenericName=Remote Desktop
-Comment=Remote Desktop
+Name=Suporte Iqnus
+GenericName=Suporte remoto
+Comment=Suporte remoto Iqnus
 Exec=rustdesk %u
 Icon=rustdesk
 Terminal=false
 Type=Application
 StartupNotify=true
 Categories=Network;RemoteAccess;GTK;
-Keywords=internet;linux;dart;rust;remote-control;p2p;teamviewer;rust-lang;rdp;remote-desktop;vnc;
+Keywords=suporte;iqnus;internet;linux;dart;rust;remote-control;p2p;teamviewer;rust-lang;rdp;remote-desktop;vnc;
 Actions=new-window;
 StartupWMClass=rustdesk
 

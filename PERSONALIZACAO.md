@@ -1,5 +1,7 @@
 # Personalização visual do fork
 
+> Esta versão também altera o nome público para **Suporte Iqnus**. Consulte [RENOMEACAO-IQNUS.md](RENOMEACAO-IQNUS.md) para aplicar e recompilar.
+
 A logo fornecida foi aplicada em 70 recursos de marca. A cópia original recebida não foi alterada.
 
 ## Entrega e uso no seu Git
@@ -34,7 +36,7 @@ Os recursos já estão gerados. Python/Pillow **não são necessários no CI** p
 
 Os SVG foram vetorizados em duas cores a partir da silhueta do PNG, sem raster embutido, para funcionar também no `flutter_svg`. Os PNG mantêm a imagem raster original redimensionada. As diferenças de antialiasing entre vetor e raster são esperadas.
 
-Não foram alterados nome do aplicativo, IDs de pacote, servidores, URLs, licenças ou créditos. Ícones de ação, marcas de provedores de autenticação e símbolos dos sistemas operacionais foram preservados. Capturas de tela do Fastlane/documentação e ilustrações de ajuda também foram preservadas: são imagens de conteúdo, e devem ser recapturadas após executar o aplicativo personalizado. As telas de abertura vazias/placeholder do Android/iOS e o texto genérico de carregamento do portátil permanecem como no projeto recebido. Não havia diretório `flutter/web` na exportação; não foi criada uma versão web incompleta.
+A etapa inicial de ícones preservou o nome do aplicativo; a etapa documentada em `RENOMEACAO-IQNUS.md` agora o altera para Suporte Iqnus. IDs de pacote, servidores, URLs, licenças e créditos permanecem preservados. Ícones de ação, marcas de provedores de autenticação e símbolos dos sistemas operacionais foram preservados. Capturas de tela do Fastlane/documentação e ilustrações de ajuda também foram preservadas: são imagens de conteúdo, e devem ser recapturadas após executar o aplicativo personalizado. As telas de abertura vazias/placeholder do Android/iOS e o texto genérico de carregamento do portátil permanecem como no projeto recebido. Não havia diretório `flutter/web` na exportação; não foi criada uma versão web incompleta.
 
 ## Regenerar usando Pillow
 

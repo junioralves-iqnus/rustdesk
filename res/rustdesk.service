@@ -1,5 +1,5 @@
 [Unit]
-Description=RustDesk
+Description=Suporte Iqnus
 Requires=network.target
 After=systemd-user-sessions.service
 

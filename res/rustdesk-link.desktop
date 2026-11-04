@@ -1,5 +1,6 @@
 [Desktop Entry]
-Name=RustDesk
+Name=Suporte Iqnus
+Comment=Suporte remoto Iqnus
 NoDisplay=true
 MimeType=x-scheme-handler/rustdesk;
 TryExec=rustdesk

@@ -5,6 +5,7 @@ import glob
 import contextlib
 import pathlib
 import platform
+import plistlib
 import zipfile
 import urllib.request
 import shutil
@@ -1108,6 +1109,13 @@ def main():
         else:
             system2('cargo --locked bundle --release --features ' + features)
             if osx:
+                bundle_plist = Path('target/release/bundle/osx/RustDesk.app/Contents/Info.plist')
+                with bundle_plist.open('rb') as stream:
+                    bundle_info = plistlib.load(stream)
+                bundle_info['CFBundleDisplayName'] = 'Suporte Iqnus'
+                bundle_info['CFBundleName'] = 'Suporte Iqnus'
+                with bundle_plist.open('wb') as stream:
+                    plistlib.dump(bundle_info, stream)
                 system2(
                     'strip target/release/bundle/osx/RustDesk.app/Contents/MacOS/rustdesk')
                 system2(

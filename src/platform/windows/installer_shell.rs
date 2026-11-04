@@ -37,6 +37,8 @@ pub(super) fn shortcut_bytes(
         unsafe { Com::CoCreateInstance(&Shell::ShellLink, None, Com::CLSCTX_INPROC_SERVER) }?;
     let target_path = wide_string(target_path);
     unsafe { link.SetPath(PCWSTR(target_path.as_ptr())) }?;
+    let description = wide_string(&crate::get_app_display_name());
+    unsafe { link.SetDescription(PCWSTR(description.as_ptr())) }?;
     if let Some(arguments) = arguments {
         let arguments = wide_string(arguments);
         unsafe { link.SetArguments(PCWSTR(arguments.as_ptr())) }?;

@@ -87,7 +87,9 @@ pub(super) fn is_matching_entry(
     }
 
     match entry.get_value::<String, _>(REG_NAME_DISPLAY_NAME) {
-        Ok(display_name) => Ok(display_name.eq_ignore_ascii_case(app_name)),
+        Ok(display_name) => Ok(display_name.eq_ignore_ascii_case(app_name)
+            || (app_name == "RustDesk"
+                && display_name.eq_ignore_ascii_case(&crate::get_app_display_name()))),
         Err(err) if err.kind() == std::io::ErrorKind::NotFound => Ok(false),
         Err(err) => bail!(
             "Failed to read {REG_NAME_DISPLAY_NAME} from MSI uninstall entry {key_name}: {err}"

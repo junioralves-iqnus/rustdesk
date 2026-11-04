@@ -1213,6 +1213,13 @@ pub fn get_app_name() -> String {
     hbb_common::config::APP_NAME.read().unwrap().clone()
 }
 
+pub const APP_DISPLAY_NAME: &str = "Suporte Iqnus";
+
+#[inline]
+pub fn get_app_display_name() -> String {
+    APP_DISPLAY_NAME.to_owned()
+}
+
 #[inline]
 pub fn is_rustdesk() -> bool {
     hbb_common::config::APP_NAME.read().unwrap().eq("RustDesk")
