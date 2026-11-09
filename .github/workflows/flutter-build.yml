@@ -29,7 +29,7 @@ on:
 
 env:
   RENDEZVOUS_SERVER: "suporte.iqnus.com.br"
-  RS_PUB_KEY: "DwMfing5NXPSpflZOikq+EGb5itzaa+PVnrj+W+KsEg="
+  RS_PUB_KEY: "spckTO0wWUVQ1hkldL0YOb2XvZyMf6YM10IZS7wYv5Y="
   API_SERVER: "http://suporte.iqnus.com.br:21114"
   SCITER_RUST_VERSION: "1.75" # https://github.com/rustdesk/rustdesk/discussions/7503...
   RUST_VERSION: "1.75" # sciter failed on m1....
