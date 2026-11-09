@@ -30,7 +30,6 @@ on:
 env:
   RENDEZVOUS_SERVER: "suporte.iqnus.com"
   RS_PUB_KEY: "spckTO0wWUVQ1hkldL0YOb2XvZyMf6YM10IZS7wYv5Y="
-  API_SERVER: "http://suporte.iqnus.com:21114"
   SCITER_RUST_VERSION: "1.75" # https://github.com/rustdesk/rustdesk/discussions/7503...
   RUST_VERSION: "1.75" # sciter failed on m1....
   MAC_RUST_VERSION: "1.81" # 1.81 is requred for macos, because of https://github.com/yury/cidre requires 1.81
